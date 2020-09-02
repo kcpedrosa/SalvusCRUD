@@ -1,0 +1,21 @@
+{% load static %}
+<!--esse load static ai em cima carrega as definicoes CSS presentes
+em style.css na pasta ESTATICOS, juntamente com a TAG LINK-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="home">Ola mundo, alles blau</h1>
+    <h3 class="home2">Nach dem Bundestag lehnt auch der Bundesrat Tempo 130 ab.</h3>
+
+    <img src="{% static "imagens/python.png" %}" alt="My image">
+
+</body>
+</html>

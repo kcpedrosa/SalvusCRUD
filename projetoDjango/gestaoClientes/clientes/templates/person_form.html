@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %} Administracao {% endblock %}
+{% block main %}
+     <!--action dentro de form removido pra nao duplicar os dados do cliente
+    quanto atualizar : action="{% url 'persons_new' %}"
+    estava criando novo cliente ao inves de atualizar-->
+    <div class="container">
+    <div class="jumbotron m-5">
+    <div class="row">
+        <div class="col-6">
+            <h3> New customer </h3>
+            <form  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|bootstrap }}
+            <button type="submit" class="btn btn-info"> Save </button>
+            </form>
+            </div>
+        <div class="col-6">
+
+    <!--poderia ser um button abaixo-->
+            <h1>
+         <a href="{% url 'persons_new' %}" class="btn btn-primary"> New Client </a>
+            </h1>
+        </div>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+

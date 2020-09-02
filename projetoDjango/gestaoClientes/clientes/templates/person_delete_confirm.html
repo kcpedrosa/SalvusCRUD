@@ -1,0 +1,26 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %} Confirmação de DELETE {% endblock %}
+
+{% block main %}
+    <div class="container">
+    <div class="jumbotron m-5">
+    <h1> Tem certeza que deseja deletar o REGISTRO abaixo? </h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-danger"> Deletar </button>
+    </form>
+    </div>
+    </div>
+{% endblock %}
+
+
+<!--poderia colocar so a {{person}}, alterando em views
+return render(request, 'person_delete_confirm.html', {'form':form})
+para apenas 'person':person e escrevendo Tem certeza que deseja
+deletar o {{person}} abaixo? neste HTML-->
+
+
